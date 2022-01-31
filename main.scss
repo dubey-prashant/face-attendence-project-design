@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,700&display=swap');
+
+:root {
+  --primaryColor: #d22;
+  --hoverPrimary: #b00;
+  --secondaryColor: #292b29;
+  --fontColor: #eee;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: var(--fontColor);
+}
+
+body {
+  background: #000;
+}
+
+header {
+  background: var(--primaryColor);
+  width: 100%;
+  padding: 0 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  height: 60px;
+  max-width: 1200px;
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 5px 0;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--fontColor);
+        transform-origin: center;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+// header complete
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 5%;
+  background: var(--secondaryColor);
+  box-shadow: 0 0 5px #d2d2d2;
+
+  h3 {
+    margin: 30px auto;
+    font-size: 28px;
+  }
+
+  label,
+  input,
+  textarea {
+    display: block;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 10px;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input,
+  textarea {
+    padding: 5px 2px;
+    border-radius: 3px;
+    color: var(--secondaryColor);
+    margin-bottom: 15px;
+
+    &:focus {
+      border: 2px solid var(--hoverPrimary);
+    }
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+
+  .btn-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    button {
+      background: var(--primaryColor);
+      margin: 20px auto;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.8;
+      padding: 0 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+        background: var(--hoverPrimary);
+      }
+    }
+  }
+
+  .img-div {
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
